@@ -1,5 +1,6 @@
 # -*-coding:Latin-1 -*
 
+#map function
 def map(input):
 	#declaration of a list to store our (key,value) pairs
 	#dict = {}
