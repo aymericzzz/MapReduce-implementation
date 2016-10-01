@@ -1,7 +1,7 @@
 # -*-coding:Latin-1 -*
 
 #map function
-def map(input):
+def map_function(input):
 	#declaration of a list to store our (key,value) pairs
 	#dict = {}
 	list = []
@@ -21,4 +21,5 @@ def map(input):
 				#dict[word] = 1
 		#list_line1 = [(a, b) for a, b in dict.items()]
 			list[i].append((word, 1))
-	i+=1
+		i+=1
+	return list
