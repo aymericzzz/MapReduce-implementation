@@ -14,23 +14,22 @@ final_table = []
 # read the input file and store each line in a cell of a list
 content = [line.rstrip('\r\n') for line in open('input.txt', 'r')]
 
-
+print '1. INPUT READER', '\n'
+print(content)
 # call of the map function
 mapper = map_function(content)
+
+print('')
+print '1. MAPPING', '\n'
 print(mapper)
 print("")
 
-# shuffle
+# shuffle and sort
 # we put every element (key, value) of the input side by side in a list
 for cell in mapper:
 	for inner_cell in cell:
 		table.append(inner_cell)
-table.sort()		
-print("")
-print(table)
-print("")
 
-# sort and shuffle
 for key, value in table:
 	# count of the number of occurencies of this key
 	k = table.count((key,value))
@@ -44,7 +43,15 @@ for key, value in table:
 		table_after_ss.append((key, value))
 	# at the end of the loop, set the previous_key to current one for next iteration
 	previous_key = key
+print '3. SHUFFLE AND SORT', '\n'
 print(table_after_ss)
 
+print('')
 final_table = reduce_function(dict(table_after_ss))		
+print '4. REDUCE', '\n'
 print(final_table)
+
+print('')
+print '5. OUTPUT WRITER', '\n'
+for key, value in final_table.items():
+	print key, value
