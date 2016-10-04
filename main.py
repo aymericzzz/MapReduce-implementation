@@ -2,12 +2,14 @@
 
 import os 
 from map import map_function
+from reduce import reduce_function
 
 table = []
 k = 0
 previous_key = ''
 # table after shuffle and sort
 table_after_ss = []
+final_table = []
 # input reader
 # read the input file and store each line in a cell of a list
 content = [line.rstrip('\r\n') for line in open('input.txt', 'r')]
@@ -28,7 +30,7 @@ print("")
 print(table)
 print("")
 
-# sort
+# sort and shuffle
 for key, value in table:
 	# count of the number of occurencies of this key
 	k = table.count((key,value))
@@ -42,4 +44,7 @@ for key, value in table:
 		table_after_ss.append((key, value))
 	# at the end of the loop, set the previous_key to current one for next iteration
 	previous_key = key
-print(table_after_ss)		
+print(table_after_ss)
+
+final_table = reduce_function(dict(table_after_ss))		
+print(final_table)
