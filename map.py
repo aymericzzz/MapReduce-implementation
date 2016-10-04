@@ -13,6 +13,7 @@ def map_function(input):
 		words_array = line.split()
 		#reading of every word
 		for word in words_array:
+			#add every word as a (key, value) pair
 			list[i].append((word, 1))
 		i+=1
 	return list
